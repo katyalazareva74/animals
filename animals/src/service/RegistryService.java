@@ -7,18 +7,16 @@ import createzoo.Reganimal;
 import file.OutInput;
 import file.SaveLoad;
 
-
-
 public class RegistryService implements Service {
 
     private Reganimal reganimal;
     private OutInput saveload;
 
-
     public RegistryService(Reganimal regan) {
         this.reganimal = regan;
-        this.saveload=new SaveLoad();
+        this.saveload = new SaveLoad();
     }
+
     public List<Dogan> showreganimal() {
         return reganimal.getRegistry();
     }
@@ -35,10 +33,8 @@ public class RegistryService implements Service {
     public Dogan addnewco(Dogan a, String str) {
         return reganimal.addnewcommand(a, str);
     }
+
     public void saveanimals() {
         saveload.save(this.reganimal);
-
     }
-
-
-}
+}        
