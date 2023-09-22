@@ -10,22 +10,22 @@ import java.io.ObjectOutputStream;
 public class SaveLoad implements OutInput {
 
     public void save(Object zoo) {
-        try(ObjectOutputStream savezo = new ObjectOutputStream(new FileOutputStream("data1.dat"))){
+        try (ObjectOutputStream savezo = new ObjectOutputStream(new FileOutputStream("data1.dat"))) {
             savezo.writeObject(zoo);
-        } catch (FileNotFoundException e){
-                System.out.println("File not found");
-        } catch (IOException e){
-                System.out.println("Error ObjectOutputStream");
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } catch (IOException e) {
+            System.out.println("Error ObjectOutputStream");
         }
     }
 
     public Object load() {
         Object zoo = new Object();
-        try(ObjectInputStream zooInput = new ObjectInputStream(new FileInputStream("data1.dat"))){
+        try (ObjectInputStream zooInput = new ObjectInputStream(new FileInputStream("data1.dat"))) {
             zoo = zooInput.readObject();
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("File not found");
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Error ObjectOutputStream");
         } catch (ClassNotFoundException e) {
             System.out.println("Class not found");
