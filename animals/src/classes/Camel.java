@@ -11,7 +11,7 @@ public class Camel extends Dogan {
 
     public Camel(String name, int date) {
         super(name, date);
-        this.vidanimal = "horse";
+        this.vidanimal = "camel";
         this.typeanimal = "packanimal";
         this.commands = new ArrayList<>();
     }

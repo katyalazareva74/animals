@@ -1,10 +1,9 @@
 package classes;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cat extends Dogan{
+public class Cat extends Dogan {
 
     private String vidanimal;
     private String typeanimal;

@@ -1,6 +1,5 @@
 package classes;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +11,7 @@ public class Hamster extends Dogan {
 
     public Hamster(String name, int date) {
         super(name, date);
-        this.vidanimal = "dog";
+        this.vidanimal = "hamster";
         this.typeanimal = "homeanimal";
         this.commands = new ArrayList<>();
     }

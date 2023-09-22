@@ -1,6 +1,5 @@
 package classes;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,5 +48,4 @@ public class Horse extends Dogan {
         }
         return str.toString();
     }
-    
 }

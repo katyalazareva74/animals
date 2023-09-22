@@ -1,11 +1,10 @@
 package classes;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Donkey extends Dogan {
-  
+
     private String vidanimal;
     private String typeanimal;
     private List<String> commands;
@@ -48,5 +47,5 @@ public class Donkey extends Dogan {
             }
         }
         return str.toString();
-    }  
+    }
 }
