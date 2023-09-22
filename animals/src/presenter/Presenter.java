@@ -6,8 +6,6 @@ import classes.Dogan;
 import service.Service;
 import ui.View;
 
-
-
 public class Presenter {
 
     private View view;
@@ -34,7 +32,8 @@ public class Presenter {
     public Dogan taskfind(String str) {
         return service.fanimal(str);
     }
-    public void savezoo(){
+
+    public void savezoo() {
         service.saveanimals();
     }
 }
