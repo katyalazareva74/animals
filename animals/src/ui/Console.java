@@ -1,7 +1,5 @@
 package ui;
 
-
-
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -11,8 +9,6 @@ import exceptions.NoAddAnimalExeption;
 import exceptions.NoAddCommandExeption;
 import exceptions.NoFindAnimalExeption;
 import presenter.Presenter;
-
-
 
 public class Console implements View {
     private Scanner scanner;
@@ -35,7 +31,7 @@ public class Console implements View {
                             +
                             "\n2. Найти животное по кличке и научить его новой команде;\n3. Показать весь зоопарк;"
                             +
-                            "\n4. Выход\n");
+                            "\n4. Посмотреть список команд животного;\n5. Выход\n");
             n = scanner.nextInt();
         }
         String str = scanner.nextLine();
@@ -57,6 +53,9 @@ public class Console implements View {
                     showzoo();
                     break;
                 case 4:
+                    findanimal1();
+                    break;
+                case 5:
                     exit();
                     break;
                 default:
@@ -88,7 +87,7 @@ public class Console implements View {
         } catch (NoAddAnimalExeption e) {
             System.out.println(e.getMessage());
         }
-       // String sw1 = scanner.nextLine();
+        String sw1 = scanner.nextLine();
     }
 
     public void showzoo() {
@@ -108,6 +107,17 @@ public class Console implements View {
             String str1 = scanner.nextLine();
             a = presenter.newcommand(a, str1);
             System.out.println(a);
+        } catch (NoAddCommandExeption | NoFindAnimalExeption e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void findanimal1() {
+        System.out.println("Введите кличку животного: ");
+        String str = scanner.nextLine();
+        try {
+            Dogan a = presenter.taskfind(str);
+            System.out.println(a.getCommands());
         } catch (NoAddCommandExeption | NoFindAnimalExeption e) {
             System.out.println(e.getMessage());
         }
