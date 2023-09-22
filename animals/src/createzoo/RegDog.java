@@ -16,7 +16,7 @@ import exceptions.NoAddAnimalExeption;
 import exceptions.NoAddCommandExeption;
 import exceptions.NoFindAnimalExeption;
 
-public class RegDog implements Serializable, Reganimal{
+public class RegDog implements Serializable, Reganimal {
     private int id;
     private List<Dogan> reganimal;
 
@@ -69,10 +69,12 @@ public class RegDog implements Serializable, Reganimal{
         reganimal.add(an);
         return true;
     }
-   public Iterator<Dogan> iterator() {
+
+    public Iterator<Dogan> iterator() {
         return new AnimalIterator(this.reganimal);
     }
-    public Dogan findan(String str) throws NoFindAnimalExeption{
+
+    public Dogan findan(String str) throws NoFindAnimalExeption {
         for (Dogan item : reganimal) {
             if (item.getNickname().equals(str)) {
                 return item;
@@ -80,15 +82,16 @@ public class RegDog implements Serializable, Reganimal{
         }
         throw new NoFindAnimalExeption("Не удалось найти животное в этом зоопарке");
     }
-    public Dogan addnewcommand (Dogan a, String str1) throws NoAddCommandExeption {
-        if(a!=null & str1 !=""){
+
+    public Dogan addnewcommand(Dogan a, String str1) throws NoAddCommandExeption {
+        if (a != null & str1 != "") {
             a.addCommands(str1);
-         }
-         else{
+        } else {
             throw new NoAddCommandExeption("Не удалось научить животное новой команде!");
-         }
+        }
         return a;
     }
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();

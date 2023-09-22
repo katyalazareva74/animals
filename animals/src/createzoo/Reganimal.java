@@ -5,12 +5,14 @@ import java.util.List;
 
 import classes.Dogan;
 
-
-
 public interface Reganimal extends Iterable<Dogan> {
     List<Dogan> getRegistry();
+
     Iterator<Dogan> iterator();
+
     boolean addanimal(String str);
+
     Dogan findan(String str);
-    Dogan addnewcommand (Dogan a, String str1);
+
+    Dogan addnewcommand(Dogan a, String str1);
 }
