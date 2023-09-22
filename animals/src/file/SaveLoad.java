@@ -19,21 +19,17 @@ public class SaveLoad implements OutInput {
         }
     }
 
-    public Object load() throws ClassNotFoundException, IOException  {
+    public Object load() {
         Object zoo = new Object();
-       //try(
-            ObjectInputStream zooInput = new ObjectInputStream(new FileInputStream("an2/data1.dat"));
-            System.out.println(1);
+        try(ObjectInputStream zooInput = new ObjectInputStream(new FileInputStream("data1.dat"))){
             zoo = zooInput.readObject();
-            System.out.println(2);
-        // } catch (FileNotFoundException e){
-        //     System.out.println("File not found");
-        // } catch (IOException e){
-        //     System.out.println("Error ObjectOutputStream");
-        // } catch (ClassNotFoundException e) {
-        //     System.out.println("Class not found");
-        // }
-        zooInput.close();
+        } catch (FileNotFoundException e){
+            System.out.println("File not found");
+        } catch (IOException e){
+            System.out.println("Error ObjectOutputStream");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Class not found");
+        }
         return zoo;
     }
 }
